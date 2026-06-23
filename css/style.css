@@ -1,0 +1,2135 @@
+/* ===================================
+   Ivseznayfews Official Website
+   Apple × Vercel × Linear Style
+=================================== */
+
+
+/* =========================
+   Root Variables
+========================= */
+
+:root{
+
+--bg:#050505;
+--bg-secondary:#0b0b0b;
+
+--card:
+rgba(255,255,255,0.05);
+
+--card-hover:
+rgba(255,255,255,0.08);
+
+--border:
+rgba(255,255,255,0.08);
+
+--text:#ffffff;
+
+--text-secondary:
+rgba(255,255,255,0.65);
+
+--accent:#0071e3;
+
+--accent-hover:#2997ff;
+
+--shadow:
+0 8px 30px rgba(0,0,0,.35);
+
+--radius:24px;
+
+--transition:
+all .35s ease;
+
+}
+
+
+/* =========================
+   Light Theme
+========================= */
+
+body.light{
+
+--bg:#f5f5f7;
+
+--bg-secondary:#ffffff;
+
+--card:#ffffff;
+
+--card-hover:#fafafa;
+
+--border:#e5e5e5;
+
+--text:#111111;
+
+--text-secondary:#666666;
+
+--shadow:
+0 8px 30px rgba(0,0,0,.08);
+
+}
+
+
+/* =========================
+   Reset
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:
+Inter,
+-apple-system,
+BlinkMacSystemFont,
+Segoe UI,
+sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+transition:
+background .3s,
+color .3s;
+
+}
+
+
+/* =========================
+   Selection
+========================= */
+
+::selection{
+
+background:var(--accent);
+
+color:white;
+
+}
+
+
+/* =========================
+   Scrollbar
+========================= */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:var(--bg);
+}
+
+::-webkit-scrollbar-thumb{
+
+background:
+rgba(255,255,255,.15);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:
+rgba(255,255,255,.3);
+
+}
+
+
+/* =========================
+   Loader
+========================= */
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:#000;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+
+transition:.8s;
+
+}
+
+.loader-hidden{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+.loader-logo{
+
+font-size:64px;
+
+font-weight:800;
+
+letter-spacing:4px;
+
+animation:
+loaderPulse 2s infinite;
+
+}
+
+@keyframes loaderPulse{
+
+0%{
+opacity:.3;
+transform:scale(.95);
+}
+
+50%{
+opacity:1;
+transform:scale(1);
+}
+
+100%{
+opacity:.3;
+transform:scale(.95);
+}
+
+}
+
+
+/* =========================
+   Particles Layer
+========================= */
+
+#particles{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-2;
+
+}
+
+
+/* =========================
+   Cursor Glow
+========================= */
+
+.cursor-glow{
+
+position:fixed;
+
+width:300px;
+height:300px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(0,113,227,.18),
+transparent 70%
+);
+
+pointer-events:none;
+
+z-index:-1;
+
+transform:
+translate(-50%,-50%);
+
+filter:blur(20px);
+
+}
+
+
+/* =========================
+   Links
+========================= */
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+
+/* =========================
+   Navbar
+========================= */
+
+.navbar{
+
+position:fixed;
+
+top:20px;
+left:50%;
+
+transform:
+translateX(-50%);
+
+width:92%;
+
+max-width:1280px;
+
+padding:
+18px 32px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:
+rgba(255,255,255,.04);
+
+backdrop-filter:
+blur(25px);
+
+-webkit-backdrop-filter:
+blur(25px);
+
+border:
+1px solid var(--border);
+
+border-radius:999px;
+
+z-index:999;
+
+box-shadow:
+var(--shadow);
+
+}
+
+
+/* Logo */
+
+.logo{
+
+font-size:1.15rem;
+
+font-weight:700;
+
+letter-spacing:.5px;
+
+transition:var(--transition);
+
+}
+
+.logo:hover{
+
+color:var(--accent);
+
+}
+
+
+/* Menu */
+
+.nav-menu{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+.nav-menu a{
+
+position:relative;
+
+font-size:.95rem;
+
+font-weight:500;
+
+color:var(--text-secondary);
+
+transition:var(--transition);
+
+}
+
+.nav-menu a:hover{
+
+color:var(--text);
+
+}
+
+.nav-menu a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-6px;
+
+width:0;
+height:2px;
+
+background:var(--accent);
+
+transition:.3s;
+
+}
+
+.nav-menu a:hover::after{
+
+width:100%;
+
+}
+
+
+/* Theme Button */
+
+#themeToggle{
+
+width:42px;
+height:42px;
+
+border-radius:50%;
+
+border:none;
+
+background:var(--card);
+
+color:var(--text);
+
+cursor:pointer;
+
+font-size:18px;
+
+transition:var(--transition);
+
+}
+
+#themeToggle:hover{
+
+transform:rotate(20deg);
+
+background:var(--card-hover);
+
+}
+
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero{
+
+position:relative;
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:0 24px;
+
+overflow:hidden;
+
+}
+
+
+/* Content */
+
+.hero-content{
+
+max-width:900px;
+
+z-index:2;
+
+}
+
+
+/* Badge */
+
+.hero-badge{
+
+display:inline-block;
+
+padding:
+10px 18px;
+
+margin-bottom:25px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid var(--border);
+
+border-radius:999px;
+
+font-size:.85rem;
+
+color:var(--text-secondary);
+
+backdrop-filter:
+blur(10px);
+
+}
+
+
+/* Main Title */
+
+.hero h1{
+
+font-size:
+clamp(
+4rem,
+10vw,
+8rem
+);
+
+font-weight:800;
+
+letter-spacing:-4px;
+
+line-height:1;
+
+margin-bottom:12px;
+
+}
+
+
+/* Chinese Name */
+
+.hero h2{
+
+font-size:
+clamp(
+1.5rem,
+3vw,
+2.6rem
+);
+
+font-weight:500;
+
+color:var(--text-secondary);
+
+margin-bottom:30px;
+
+}
+
+
+/* Typing Text */
+
+#typing{
+
+font-size:1.2rem;
+
+height:40px;
+
+color:var(--accent);
+
+margin-bottom:25px;
+
+}
+
+
+/* Description */
+
+.hero-desc{
+
+max-width:700px;
+
+margin:auto;
+
+font-size:1.15rem;
+
+line-height:1.8;
+
+color:var(--text-secondary);
+
+}
+
+
+/* Buttons */
+
+.hero-buttons{
+
+margin-top:50px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+/* ===================================
+   BUTTON SYSTEM
+=================================== */
+
+.btn-primary,
+.btn-secondary{
+
+display:inline-flex;
+
+align-items:center;
+justify-content:center;
+
+padding:14px 28px;
+
+border-radius:999px;
+
+font-weight:600;
+
+transition:all .35s ease;
+
+cursor:pointer;
+
+}
+
+.btn-primary{
+
+background:var(--accent);
+
+color:white;
+
+box-shadow:
+0 10px 25px rgba(0,113,227,.35);
+
+}
+
+.btn-primary:hover{
+
+background:var(--accent-hover);
+
+transform:
+translateY(-3px);
+
+box-shadow:
+0 20px 40px rgba(0,113,227,.45);
+
+}
+
+.btn-secondary{
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+color:var(--text);
+
+backdrop-filter:blur(20px);
+
+}
+
+.btn-secondary:hover{
+
+background:var(--card-hover);
+
+transform:
+translateY(-3px);
+
+}
+
+
+/* ===================================
+   SECTION
+=================================== */
+
+.section{
+
+padding:
+120px 8%;
+
+position:relative;
+
+}
+
+.section-title{
+
+font-size:
+clamp(2rem,4vw,3.5rem);
+
+font-weight:800;
+
+margin-bottom:60px;
+
+text-align:center;
+
+letter-spacing:-1px;
+
+}
+
+
+/* ===================================
+   SKILLS
+=================================== */
+
+.skills-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(280px,1fr)
+);
+
+gap:24px;
+
+}
+
+.skill-card{
+
+padding:32px;
+
+border-radius:var(--radius);
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(20px);
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.skill-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-100px;
+right:-100px;
+
+width:180px;
+height:180px;
+
+background:
+radial-gradient(
+circle,
+rgba(0,113,227,.15),
+transparent
+);
+
+transition:.5s;
+
+}
+
+.skill-card:hover{
+
+transform:
+translateY(-8px);
+
+background:
+var(--card-hover);
+
+border-color:
+rgba(0,113,227,.3);
+
+}
+
+.skill-card:hover::before{
+
+transform:scale(1.3);
+
+}
+
+.skill-card h3{
+
+font-size:1.4rem;
+
+margin-bottom:14px;
+
+}
+
+.skill-card p{
+
+line-height:1.8;
+
+color:
+var(--text-secondary);
+
+}
+
+
+/* ===================================
+   PROJECTS
+=================================== */
+
+.projects-preview{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(320px,1fr)
+);
+
+gap:28px;
+
+margin-bottom:50px;
+
+}
+
+.project{
+
+position:relative;
+
+padding:36px;
+
+border-radius:28px;
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+.project::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+135deg,
+transparent,
+rgba(255,255,255,.03)
+);
+
+opacity:0;
+
+transition:.4s;
+
+}
+
+.project:hover{
+
+transform:
+translateY(-10px);
+
+border-color:
+rgba(0,113,227,.35);
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.25);
+
+}
+
+.project:hover::before{
+
+opacity:1;
+
+}
+
+.project h3{
+
+font-size:1.8rem;
+
+margin-bottom:16px;
+
+}
+
+.project p{
+
+color:var(--text-secondary);
+
+line-height:1.7;
+
+}
+
+
+/* ===================================
+   CENTER
+=================================== */
+
+.center{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+/* ===================================
+   GITHUB CARD
+=================================== */
+
+.github-card{
+
+max-width:1000px;
+
+margin:auto;
+
+padding:50px;
+
+border-radius:32px;
+
+background:linear-gradient(
+135deg,
+rgba(0,113,227,.08),
+rgba(255,255,255,.03)
+);
+
+border:1px solid var(--border);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+backdrop-filter:blur(20px);
+
+}
+
+.github-card h2{
+
+font-size:2rem;
+
+margin-bottom:12px;
+
+}
+
+.github-card p{
+
+color:var(--text-secondary);
+
+line-height:1.8;
+
+}
+
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+
+margin-top:120px;
+
+padding:80px 8% 40px;
+
+border-top:
+1px solid var(--border);
+
+}
+
+.footer-content{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:60px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-content h3{
+
+font-size:1.6rem;
+
+margin-bottom:14px;
+
+}
+
+.footer-content p{
+
+max-width:420px;
+
+line-height:1.8;
+
+color:var(--text-secondary);
+
+}
+
+.footer-content div:last-child{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.footer-content a{
+
+color:var(--text-secondary);
+
+transition:.3s;
+
+}
+
+.footer-content a:hover{
+
+color:var(--accent);
+
+}
+
+.copyright{
+
+margin-top:40px;
+
+padding-top:30px;
+
+border-top:
+1px solid var(--border);
+
+text-align:center;
+
+color:var(--text-secondary);
+
+}
+
+
+/* ===================================
+   REVEAL ANIMATION
+=================================== */
+
+.reveal{
+
+opacity:0;
+
+transform:
+translateY(60px);
+
+transition:
+all .9s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+
+/* ===================================
+   FLOAT ANIMATION
+=================================== */
+
+@keyframes float{
+
+0%{
+transform:
+translateY(0);
+}
+
+50%{
+transform:
+translateY(-10px);
+}
+
+100%{
+transform:
+translateY(0);
+}
+
+}
+
+.skill-card:nth-child(1){
+
+animation:
+float 6s infinite;
+
+}
+
+.skill-card:nth-child(2){
+
+animation:
+float 7s infinite;
+
+}
+
+.skill-card:nth-child(3){
+
+animation:
+float 8s infinite;
+
+}
+
+.skill-card:nth-child(4){
+
+animation:
+float 9s infinite;
+
+}
+
+
+/* ===================================
+   GLOW EFFECT
+=================================== */
+
+.project:hover,
+.skill-card:hover,
+.github-card:hover{
+
+box-shadow:
+0 0 40px rgba(0,113,227,.12);
+
+}
+
+
+/* ===================================
+   BACKDROP ENHANCEMENT
+=================================== */
+
+.skill-card,
+.project,
+.github-card,
+.navbar{
+
+-webkit-backdrop-filter:
+blur(20px);
+
+backdrop-filter:
+blur(20px);
+
+}
+
+
+/* ===================================
+   SMOOTH TRANSITIONS
+=================================== */
+
+body,
+a,
+button,
+div{
+
+transition:
+background .3s,
+color .3s,
+border-color .3s,
+transform .3s;
+
+}
+/* ===================================
+   HERO GLOW BACKGROUND
+=================================== */
+
+.hero-bg{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+.blur{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.45;
+
+animation:
+glowMove 18s infinite linear;
+
+}
+
+.blur1{
+
+width:500px;
+height:500px;
+
+background:
+rgba(0,113,227,.35);
+
+top:-150px;
+left:-120px;
+
+}
+
+.blur2{
+
+width:600px;
+height:600px;
+
+background:
+rgba(140,82,255,.25);
+
+right:-200px;
+top:10%;
+
+animation-duration:25s;
+
+}
+
+.blur3{
+
+width:450px;
+height:450px;
+
+background:
+rgba(0,255,200,.15);
+
+bottom:-150px;
+left:30%;
+
+animation-duration:30s;
+
+}
+
+@keyframes glowMove{
+
+0%{
+transform:
+translate(0,0)
+scale(1);
+}
+
+25%{
+transform:
+translate(50px,80px)
+scale(1.1);
+}
+
+50%{
+transform:
+translate(-80px,50px)
+scale(.95);
+}
+
+75%{
+transform:
+translate(100px,-50px)
+scale(1.05);
+}
+
+100%{
+transform:
+translate(0,0)
+scale(1);
+}
+
+}
+
+
+/* ===================================
+   LOADER EXIT
+=================================== */
+
+.loader-hidden{
+
+opacity:0;
+
+visibility:hidden;
+
+pointer-events:none;
+
+}
+
+.loader-logo{
+
+background:
+linear-gradient(
+90deg,
+#fff,
+#0071e3,
+#fff
+);
+
+background-size:200% auto;
+
+-webkit-background-clip:text;
+background-clip:text;
+
+-webkit-text-fill-color:
+transparent;
+
+animation:
+shine 3s linear infinite;
+
+}
+
+@keyframes shine{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:200%;
+}
+
+}
+
+
+/* ===================================
+   MUSIC PLAYER
+=================================== */
+
+.music-toggle{
+
+position:fixed;
+
+right:25px;
+bottom:25px;
+
+width:60px;
+height:60px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:22px;
+
+cursor:pointer;
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(20px);
+
+z-index:9999;
+
+transition:.35s;
+
+}
+
+.music-toggle:hover{
+
+transform:
+scale(1.08)
+rotate(10deg);
+
+}
+
+.music-player{
+
+position:fixed;
+
+right:25px;
+bottom:100px;
+
+background:var(--card);
+
+padding:12px;
+
+border-radius:20px;
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(25px);
+
+opacity:0;
+
+visibility:hidden;
+
+transform:
+translateY(20px);
+
+transition:.35s;
+
+z-index:9998;
+
+}
+
+.music-player.show{
+
+opacity:1;
+
+visibility:visible;
+
+transform:
+translateY(0);
+
+}
+
+.music-player audio{
+
+width:260px;
+
+}
+
+
+/* ===================================
+   CURSOR GLOW IMPROVED
+=================================== */
+
+.cursor-glow{
+
+mix-blend-mode:screen;
+
+will-change:
+transform;
+
+}
+
+
+/* ===================================
+   GLASSMORPHISM
+=================================== */
+
+.navbar,
+.project,
+.skill-card,
+.github-card,
+.music-player{
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.06),
+rgba(255,255,255,.02)
+);
+
+box-shadow:
+
+0 8px 32px
+rgba(0,0,0,.25),
+
+inset 0 1px 0
+rgba(255,255,255,.05);
+
+}
+
+
+/* ===================================
+   HOVER LIGHT
+=================================== */
+
+.project::after,
+.skill-card::after{
+
+content:"";
+
+position:absolute;
+
+top:-150%;
+left:-150%;
+
+width:300%;
+height:300%;
+
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.04),
+transparent
+);
+
+transform:
+rotate(25deg);
+
+transition:.8s;
+
+pointer-events:none;
+
+}
+
+.project:hover::after,
+.skill-card:hover::after{
+
+left:100%;
+
+}
+
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media (max-width:1200px){
+
+.hero h1{
+
+font-size:6rem;
+
+}
+
+.section{
+
+padding:100px 6%;
+
+}
+
+}
+
+
+@media (max-width:992px){
+
+.nav-menu{
+
+gap:20px;
+
+}
+
+.hero h1{
+
+font-size:5rem;
+
+}
+
+.hero-desc{
+
+font-size:1.05rem;
+
+}
+
+.github-card{
+
+padding:40px;
+
+}
+
+}
+
+
+@media (max-width:768px){
+
+.navbar{
+
+padding:14px 18px;
+
+width:95%;
+
+}
+
+.nav-menu{
+
+display:none;
+
+}
+
+.hero{
+
+padding:0 20px;
+
+}
+
+.hero h1{
+
+font-size:3.2rem;
+
+letter-spacing:-2px;
+
+}
+
+.hero h2{
+
+font-size:1.3rem;
+
+}
+
+.hero-desc{
+
+font-size:1rem;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+width:100%;
+
+}
+
+.section{
+
+padding:80px 20px;
+
+}
+
+.section-title{
+
+font-size:2rem;
+
+}
+
+.projects-preview{
+
+grid-template-columns:1fr;
+
+}
+
+.skills-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.github-card{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.music-player audio{
+
+width:200px;
+
+}
+
+}
+
+
+@media (max-width:480px){
+
+.hero h1{
+
+font-size:2.6rem;
+
+}
+
+.hero-badge{
+
+font-size:.75rem;
+
+padding:8px 14px;
+
+}
+
+#typing{
+
+font-size:1rem;
+
+}
+
+.loader-logo{
+
+font-size:48px;
+
+}
+
+.music-toggle{
+
+width:52px;
+height:52px;
+
+}
+
+}
+
+
+/* ===================================
+   ULTRA WIDE
+=================================== */
+
+@media (min-width:1800px){
+
+.hero-content{
+
+max-width:1200px;
+
+}
+
+.hero h1{
+
+font-size:10rem;
+
+}
+
+.section{
+
+max-width:1800px;
+
+margin:auto;
+
+}
+
+}
+
+
+/* ===================================
+   ACCESSIBILITY
+=================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}
+
+
+/* ===================================
+   PRINT
+=================================== */
+
+@media print{
+
+.navbar,
+.music-toggle,
+.music-player,
+.cursor-glow,
+#particles{
+
+display:none;
+
+}
+
+body{
+
+background:white;
+
+color:black;
+
+}
+
+}
+#par
+ticles{
+
+opacity:.8;
+
+filter:
+drop-shadow(
+0 0 10px
+rgba(255,255,255,.1)
+);
+
+}
+
+/* ===================================
+   MUSIC CONTROLS
+=================================== */
+
+.music-controls{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.music-controls button{
+
+width:42px;
+height:42px;
+
+border:none;
+
+border-radius:50%;
+
+cursor:pointer;
+
+font-size:18px;
+
+background:#0071e3;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.music-controls button:hover{
+
+transform:scale(1.08);
+
+}
+
+.music-controls input{
+
+width:150px;
+
+cursor:pointer;
+
+}
+
+.page-header{
+
+padding-top:180px;
+
+padding-bottom:80px;
+
+text-align:center;
+
+}
+
+.page-header h1{
+
+font-size:4rem;
+
+margin-bottom:20px;
+
+}
+
+.page-header p{
+
+color:var(--text-secondary);
+
+font-size:1.1rem;
+
+}
+
+.project-filter{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:50px;
+
+}
+
+.project-filter input{
+
+width:400px;
+
+max-width:90%;
+
+padding:16px 20px;
+
+border-radius:999px;
+
+border:1px solid var(--border);
+
+background:var(--card);
+
+color:var(--text);
+
+outline:none;
+
+}
+
+.project-card{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.project-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.project-meta{
+
+display:flex;
+
+gap:20px;
+
+color:var(--text-secondary);
+
+font-size:.9rem;
+
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+
+max-width:900px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:30px;
+
+position:relative;
+
+padding-left:30px;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+bottom:0;
+
+width:2px;
+
+background:var(--border);
+
+}
+
+.timeline-item{
+
+position:relative;
+
+padding-left:20px;
+
+}
+
+.timeline-item::before{
+
+content:"";
+
+position:absolute;
+
+left:-6px;
+
+top:6px;
+
+width:12px;
+height:12px;
+
+border-radius:50%;
+
+background:var(--accent);
+
+box-shadow:0 0 15px rgba(0,113,227,.6);
+
+}
+
+.timeline-item span{
+
+font-weight:600;
+
+color:var(--accent);
+
+display:block;
+
+margin-bottom:6px;
+
+}
+
+.timeline-item p{
+
+color:var(--text-secondary);
+
+line-height:1.7;
+
+}
+
+/* =========================
+   CONTACT GRID
+========================= */
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(280px,1fr)
+);
+
+gap:25px;
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+.contact-card{
+
+padding:40px;
+
+border-radius:28px;
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(20px);
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.contact-card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--accent);
+
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+}
+
+.contact-card h3{
+
+font-size:1.4rem;
+
+margin-bottom:12px;
+
+}
+
+.contact-card p{
+
+color:var(--text-secondary);
+
+margin-bottom:18px;
+
+}
+
+.contact-card a{
+
+color:var(--accent);
+
+font-weight:500;
+
+text-decoration:none;
+
+}
+
+.contact-card a:hover{
+
+text-decoration:underline;
+
+}
+
+/* ===================================
+   PAGE TRANSITION OVERLAY
+=================================== */
+
+.page-transition{
+
+position:fixed;
+
+inset:0;
+
+background:var(--bg);
+
+z-index:99999;
+
+transform:translateY(100%);
+
+transition:transform .7s cubic-bezier(0.76,0,0.24,1);
+
+pointer-events:none;
+
+}
+
+.page-transition.active{
+
+transform:translateY(0);
+
+}
+
+.page-transition.exit{
+
+transform:translateY(-100%);
+
+}
+
+
+/* 页面进入动画 */
+
+body.page-enter{
+
+opacity:0;
+
+transform:translateY(20px);
+
+animation:pageEnter .6s ease forwards;
+
+}
+
+@keyframes pageEnter{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
